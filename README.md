@@ -1,3 +1,6 @@
+Aplicação basica que utiliza Firebase e AngularJS2 para criar um chat que utiliza Google e/ou email+senha para autenticação.
+
+
 # FirebaseCrud
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
