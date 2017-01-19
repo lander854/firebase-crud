@@ -1,22 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AF} from "./../providers/af";
 import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent{
+export class LoginPageComponent {
+  public error: any;
 
-  constructor(public afService:AF,private router: Router) { }
+  constructor(public afService: AF, private router: Router) {}
 
-  login() {
-
-    this.afService.loginWithGoogle().then((data)=>{
-      //se já estiver logado manda para a home page
+  loginWithGoogle() {
+    this.afService.loginWithGoogle().then((data) => {
+      // Direciona para home page se estiver logado
+      console.log(data);
+      this.afService.addUserInfo();
       this.router.navigate(['']);
-
     })
   }
 
+  loginWithEmail(event, email, password){
+    event.preventDefault();
+    this.afService.loginWithEmail(email, password).then(() => {
+      this.router.navigate(['']);
+    })
+      .catch((error: any) => {
+        if (error) {
+          this.error = error;
+          console.log(this.error);
+        }
+      });
+  }
 }

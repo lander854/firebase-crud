@@ -1,5 +1,3 @@
-Este é o codigo para criar uma simples aplicação angular2 com backend Firebase, consiste em autenticação por conta Google e chat em tempo real.
-
 # FirebaseCrud
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.

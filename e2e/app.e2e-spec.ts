@@ -7,8 +7,8 @@ describe('firebase-crud App', function() {
     page = new FirebaseCrudPage();
   });
 
-  it('should display message saying app works', () => {
+  it('aplicativo funcionando..', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('app funcionando!');
   });
 });
